@@ -1,0 +1,30 @@
+  list of live nodes
+  Least() finds a live node with least cost, deletes
+   it from the list and returns it
+Add(x) calculates cost of x and adds it to the list
+   of live nodes
+node
+{
+   int job_number;
+   int worker_number;
+   node parent;
+   int cost;
+}
+algorithm findMinCost (costMatrix mat[][])
+{
+   while (true)
+   {
+      E = Least();
+ if (E is a leaf node)
+      {
+         printSolution();
+         return;
+      }
+
+     for each child x of E
+     {
+         Add(x); 
+         x->parent = E; 
+     }
+   }
+}
